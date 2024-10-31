@@ -1,0 +1,560 @@
+.wp-popup {
+  width: 100vw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  &__wrapper {
+    height: 502px;
+    width: 31.7%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 0px 100px 0px 0px;
+    padding: 50px 65px;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  &__avatars {
+    &-list {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    &-item {
+      width: 154px;
+      height: 154px;
+      z-index: 3;
+      margin-left: -10px;
+      position: relative;
+      opacity: 0;
+      transition: all 300ms ease-in-out;
+      img {
+        border: 10px solid var(--white);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        object-position: top;
+      }
+      &:nth-child(2) {
+        width: 109px;
+        height: 109px;
+        margin-left: -28px;
+        z-index: 2;
+        transform: translateX(-100%);
+        img {
+          border: 7px solid var(--white);
+        }
+      }
+      &:nth-child(3) {
+        width: 78px;
+        height: 78px;
+        opacity: 0.6;
+        margin-left: -8px;
+        z-index: 1;
+        transform: translateX(-200%);
+        img {
+          border: 0px solid var(--white);
+        }
+      }
+    }
+  }
+  &__online {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+  }
+  &__info {
+    &-job {
+      color: rgba(154, 154, 154, 0.6);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.602px;
+      text-transform: capitalize;
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 400ms ease-in-out;
+    }
+    &-name {
+      color: var(--wpPopupnamecolor);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 136.833%;
+      opacity: 0;
+      transition: all 300ms ease-in-out;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__connect {
+    margin-top: 30px;
+    color: var(--black);
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.76px;
+    text-transform: uppercase;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+  }
+  &__text {
+    max-width: 372px;
+    margin-top: 18px;
+    color: var(--textColor);
+    font-size: 18px;
+    line-height: 140%;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+  }
+  &__btn {
+    display: flex;
+    gap: 11px;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+    &-text {
+      display: flex;
+      width: 191px;
+      height: 63px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      border-radius: 100px;
+      color: var(--white);
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.75px;
+      font-size: 16px;
+    }
+    &-arrow {
+      svg {
+        height: 63px;
+        width: 63px;
+        transition: all 400ms ease-in-out;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1600px) {
+      &-text {
+        width: 152px;
+        height: 50px;
+        font-size: 13px;
+      }
+      &-arrow {
+        svg {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    .wp-popup__btn-arrow {
+      svg {
+        fill: var(--black);
+        rect,
+        path {
+          stroke: var(--white);
+        }
+      }
+    }
+  }
+  &__exit {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+  }
+  &__bot {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    &-linev {
+      min-width: 1px;
+      min-height: 100%;
+      background-color: var(--black);
+    }
+    &-text {
+      color: var(--black);
+      text-align: right;
+      font-family: Raleway;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 0.75px;
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    .wp-popup__avatars-item {
+      transform: translateX(0);
+      opacity: 1;
+      &:nth-child(1) {
+        transition-delay: 300ms;
+      }
+      &:nth-child(2) {
+        transition-delay: 350ms;
+      }
+      &:nth-child(3) {
+        transition-delay: 400ms;
+      }
+    }
+    .wp-popup__info-job {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 300ms;
+    }
+    .wp-popup__info-name {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 400ms;
+    }
+    .wp-popup__connect,
+    .wp-popup__text,
+    .wp-popup__btn {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 400ms;
+    }
+    .wp-popup__exit {
+      transition-delay: 450ms;
+      opacity: 1;
+    }
+  }
+}
+@media (min-width: 2560px) {
+  .wp-popup {
+    &__wrapper {
+      height: 652px; // было 502px
+      border-radius: 0px 133px 0px 0px; // было 0px 297.393px 0px 0px
+      padding: 65px 84px; //
+    }
+    &__top {
+      gap: 24px;
+    }
+    &__avatars {
+      &-item {
+        width: 200px; // было 154px
+        height: 200px; // было 154px
+        margin-left: -13px; // было -10px
+        img {
+          border: 13px solid var(--white); // было 10px
+        }
+      }
+      &-item:nth-child(2) {
+        width: 141.7px; // было 109px
+        height: 141.7px; // было 109px
+        margin-left: -36.4px; // было -28px
+        img {
+          border: 9.1px solid var(--white); // было 7px
+        }
+      }
+      &-item:nth-child(3) {
+        width: 101.4px; // было 78px
+        height: 101.4px; // было 78px
+        margin-left: -10.4px; // было -8px
+      }
+    }
+    &__online {
+      position: absolute;
+      svg {
+        width: 46px;
+        height: 46px;
+      }
+    }
+    &__info {
+      &-job {
+        font-size: 24px;
+      }
+      &-name {
+        font-size: 28px;
+      }
+    }
+    &__connect {
+      font-size: 48px;
+    }
+    &__text {
+      max-width: 484px; // было 372px
+      margin-top: 24px; // было 18px
+      font-size: 24px; // было 18px
+    }
+    &__exit {
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    &__bot {
+      gap: 40px;
+      &-text {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (min-width: 3840px) {
+  .wp-popup {
+    &__wrapper {
+      height: 1000px;
+      border-radius: 0px 200px 0px 0px;
+      padding: 100px 130px;
+    }
+    &__top {
+      gap: 36px;
+    }
+    &__avatars {
+      &-item {
+        width: 308px;
+        height: 308px;
+        margin-left: -20px;
+        img {
+          border: 20px solid var(--white);
+        }
+      }
+      &-item:nth-child(2) {
+        width: 218px;
+        height: 218px;
+        margin-left: -56px;
+        img {
+          border: 14px solid var(--white);
+        }
+      }
+      &-item:nth-child(3) {
+        width: 156px;
+        height: 156px;
+        margin-left: -16px;
+      }
+    }
+    &__online {
+      svg {
+        width: 72px;
+        height: 72px;
+      }
+    }
+    &__info {
+      &-job {
+        font-size: 32px;
+      }
+      &-name {
+        font-size: 44px;
+      }
+    }
+    &__connect {
+      margin-top: 60px;
+      font-size: 76px;
+    }
+    &__text {
+      max-width: 744px;
+      margin-top: 36px;
+      font-size: 36px;
+    }
+    &__exit {
+      svg {
+        width: 44px;
+        height: 44px;
+      }
+    }
+    &__bot {
+      margin-top: 88px;
+      gap: 75px;
+      &-text {
+        font-size: 32px;
+      }
+      &-linev {
+        width: 2px;
+      }
+    }
+    &__btn {
+      &-text {
+        width: 254.667px;
+        height: 84px;
+        font-size: 20px;
+        svg {
+          width: 41px;
+          height: 40px;
+        }
+      }
+      &-arrow {
+        @media (min-width: 3840px) {
+          svg {
+            height: 84px;
+            width: 84px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1600px) {
+  .wp-popup {
+    &__wrapper {
+      height: 385px; // было 1000px
+      border-radius: 0px 77px 0px 0px; // было 0px 200px 0px 0px
+      padding: 38px 45px;
+    }
+    &__top {
+      gap: 14px; // было 36px
+    }
+    &__avatars {
+      &-item {
+        width: 118px; // было 308px
+        height: 118px; // было 308px
+        margin-left: -8px; // было -20px
+        img {
+          border: 8px solid var(--white); // было 20px
+        }
+      }
+      &-item:nth-child(2) {
+        width: 84px; // было 218px
+        height: 84px; // было 218px
+        margin-left: -22px; // было -56px
+        img {
+          border: 5px solid var(--white); // было 14px
+        }
+      }
+      &-item:nth-child(3) {
+        width: 60px; // было 156px
+        height: 60px; // было 156px
+        margin-left: -6px; // было -16px
+      }
+    }
+    &__online {
+      svg {
+        width: 28px; // было 72px
+        height: 28px; // было 72px
+      }
+    }
+    &__info {
+      &-job {
+        font-size: 12px; // было 32px
+      }
+      &-name {
+        font-size: 14px; // было 44px
+      }
+    }
+    &__connect {
+      margin-top: 23px; // было 60px
+      font-size: 29px; // было 76px
+    }
+    &__text {
+      max-width: 286px; // было 744px
+      margin-top: 14px; // было 36px
+      font-size: 14px; // было 36px
+    }
+    &__exit {
+      svg {
+        width: 17px; // было 44px
+        height: 17px; // было 44px
+      }
+    }
+    &__bot {
+      margin-top: 34px; // было 88px
+    }
+    &__btn {
+      &-text {
+        svg {
+          width: 24px;
+          height: 23px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .wp-popup {
+    &__wrapper {
+      border-radius: 0 100px 0 0;
+      width: 336px;
+      height: 460px;
+      padding: 68px 35px;
+    }
+    &__top {
+      gap: 10px;
+    }
+    &__bot {
+      margin-top: 0;
+      &-linev,
+      &-text {
+        display: none;
+      }
+      justify-content: flex-start;
+    }
+    &__avatars {
+      &-item {
+        width: 82px;
+        height: 82px;
+        margin-left: -5px;
+        img {
+          border: 5px solid var(--white);
+        }
+      }
+      &-item:nth-child(2) {
+        width: 60px;
+        height: 60px;
+        margin-left: -19px;
+        img {
+          border: 4px solid var(--white);
+        }
+      }
+      &-item:nth-child(3) {
+        width: 42px;
+        height: 42px;
+        margin-left: -2px; // было -16px
+      }
+    }
+    &__online {
+      right: 10px;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &__connect {
+      font-size: 26px;
+    }
+    &__text {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    &__btn {
+      margin-top: 68px;
+      &-text {
+        svg {
+          width: 30.929px;
+          height: 30.929px;
+        }
+      }
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+    &__exit {
+      svg {
+        width: 23px;
+        height: 22px;
+      }
+    }
+  }
+}

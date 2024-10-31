@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  @@include('html/head.html',{ "title":"Ocean Point" })
+
+  <body class="no-scroll hide-wp">
+
+    <div class="cursor"></div>
+    @@include('html/sections/preloader.html') @@include('html/sections/header.html')
+    <main>
+      <div class="size"></div>
+      @@include('html/sections/intro.html')
+      <div class="sections sections-aa">
+        <div class="sections__wrapper">
+          @@include('html/sections/about.html')
+           @@include('html/sections/amenities.html')
+        </div>
+        <div class="amenities__to" id="amenities"></div>
+        <div class="about__to" id="about"></div>
+        <div class="about__trigger trigger"></div>
+        <div class="amenities__trigger trigger"></div>
+        <div class="wp-trigger wp-p"></div>
+      </div>
+      @@include('html/sections/brochure.html')
+      <div class="sections sections-gf">
+        <div class="sections__wrapper">@@include('html/sections/gallery.html') @@include('html/sections/floorplan.html')</div>
+        <div class="gallery__to" id="gallery"></div>
+        <div class="floorplan__to" id="floorplan"></div>
+        <div class="gallery__trigger trigger"></div>
+        <div class="floorplan__trigger trigger"></div>
+      </div>
+
+      @@include('html/sections/location.html') @@include('html/sections/payment.html') @@include('html/sections/developer.html')
+      @@include('html/sections/axcapital.html') @@include('html/sections/investment.html')
+    </main>
+
+    @@include('html/sections/footer.html') @@include('html/sections/popup.html') @@include('html/sections/fp-popup.html')
+    @@include('html/sections/wp-popup.html')
+    <script type="module" src="https://fnst.axflare.com/landings/global-script/landings-global-script.js"></script>
+    <script src="./js/app.min.js" type="module"></script>
+  </body>
+</html>

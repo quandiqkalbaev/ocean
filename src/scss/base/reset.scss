@@ -1,0 +1,241 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family);
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html{
+  background-color: rgb(0, 0, 0);
+
+}
+body {
+  line-height: 1;
+  background-color: rgb(0, 0, 0);
+  overflow-x: clip;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+img {
+  display: block;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:active,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:active,
+select:-webkit-autofill:focus {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) inset !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  font-weight: 300;
+}
+input::-webkit-contacts-auto-fill-button {
+  background-color: #fff !important;
+}
+.fp-popup {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:active,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:active,
+  select:-webkit-autofill:focus {
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) inset !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    font-weight: 300;
+  }
+  input::-webkit-contacts-auto-fill-button {
+    background-color: #000 !important;
+  }
+}
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
+* {
+  font-variant-numeric: lining-nums proportional-nums;
+}
+body {
+  height: var(--fullHeight);
+  // border: 1px solid red;
+}
+.body-wrapper{
+  overflow: hidden;
+}

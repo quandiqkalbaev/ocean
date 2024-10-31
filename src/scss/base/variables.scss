@@ -1,0 +1,58 @@
+:root {
+  //heights
+  --svh: 100svh;
+  --lvh: 100lvh;
+  --dvh: 100dvh;
+
+  --fullHeight:100%;
+
+  //colors
+  --dark: #1d1d1d;
+  --white: #ffffff;
+  --black: #000000;
+  --border: #4d4d4d;
+  --swiperBullet: #bdbdbd;
+  --swiperBg: #272727;
+  --fpItem: #848484;
+  --amenitiesDark: #111111;
+  --brochureWrapperColor: #0f0f0f;
+  --borderBottomColor: #5a5554;
+  --footerSocialsTextColor: #9f9f9f;
+  --footerNumberShowColor: #5c5c5c;
+  --footerLinesColor: #b3b3b3;
+  --EerieBlack: #1b1b1b;
+  --btnWhiteColor: #d9d9d9;
+  --headerBgMobile: #151515;
+  --headerItemMobileColor: #747474;
+  --introSwiperGradinetColor: #0d0d0d;
+  --darkGray: #4c4c4c;
+  --textColor: #999999;
+  --locationBorderColor: #1a1a1a;
+  --paymentContentTitleColor: #050505;
+  --wpPopupnamecolor: #242220;
+  //containers
+  --containerWidth: 1590px;
+  --1600containerWidth: 1216px;
+  --2KcontainerWidth: 2360px;
+  --4KcontainerWidth: 3500px;
+
+  //paddings
+  --paddingCont: 0 30px;
+  --mobPaddingTop: calc(var(--mobHeaderHeight) + 27px);
+
+  //ff
+  --font-family: "Raleway";
+  --second-family: "Inter";
+
+  //heights
+  --headerHeight: 81px;
+  --2KheaderHeight: 98px;
+  --4KheaderHeight: 132px;
+  --macHeaderHeight: 60px;
+  --tabletHeaderHeight: 60px;
+  --mobHeaderHeight: 50px;
+
+  //others
+  --x: 0;
+  --y: 0;
+}
